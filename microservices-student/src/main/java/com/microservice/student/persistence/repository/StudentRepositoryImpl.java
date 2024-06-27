@@ -26,6 +26,18 @@ public class StudentRepositoryImpl implements IStudentRepository{
     }
 
     @Override
+    public List<StudentResponseDto> getAllByCourseId(Long courseId) {
+        ModelMapper modelMapper = new ModelMapper();
+        return this.repository
+                .findAllByCourseId(courseId)
+                .stream()
+                .map(
+                        student -> modelMapper.map(student,StudentResponseDto.class)
+                )
+                .collect(Collectors.toList());
+    }
+
+    @Override
     public Optional<StudentResponseDto> getStudentById(Long id) {
         Optional<Student> studentOpt = this.repository.findStudentById(id);
         ModelMapper modelMapper= new ModelMapper();

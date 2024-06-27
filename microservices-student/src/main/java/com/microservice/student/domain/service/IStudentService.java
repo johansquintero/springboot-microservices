@@ -8,6 +8,8 @@ import java.util.Optional;
 
 public interface IStudentService {
     List<StudentResponseDto> getAll();
+
+    List<StudentResponseDto> getAllByCourseId(Long courseId);
     Optional<StudentResponseDto> getStudentById(Long id);
 
     Optional<StudentResponseDto> save(StudentRequestDto student);

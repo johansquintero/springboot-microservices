@@ -2,6 +2,7 @@ package com.microservice.course.controller;
 
 import com.microservice.course.domain.dto.CourseDto;
 import com.microservice.course.domain.services.ICourseService;
+import com.microservice.course.http.response.StudentByCourseResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +12,7 @@ import java.util.List;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping(path = "/api/courses")
+@RequestMapping(path = "/api/course")
 public class CourseController {
     private final ICourseService courseService;
 
@@ -20,12 +21,20 @@ public class CourseController {
         return ResponseEntity.ok(this.courseService.getAll());
     }
 
-    @GetMapping(path = "/{id}")
+    @GetMapping(path = "/search-students/{courseId}")
+    public ResponseEntity<StudentByCourseResponse> getStudentsByCourseId(
+            @PathVariable(name="courseId") Long courseId
+    ){
+        return ResponseEntity.ok(this.courseService.findStudenByCourseId(courseId));
+    }
+
+
+    @GetMapping(path = "/search-by-id/{id}")
     public ResponseEntity<CourseDto> getById(@PathVariable(name = "id") Long id){
         return ResponseEntity.of(this.courseService.getById(id));
     }
 
-    @GetMapping(path = "/{name}")
+    @GetMapping(path = "/search-by-name/{name}")
     public ResponseEntity<CourseDto> getByName(@PathVariable(name = "name") String name){
         return ResponseEntity.of(this.courseService.getByName(name));
     }
@@ -40,7 +49,7 @@ public class CourseController {
     }
 
     @DeleteMapping(path = "/{id}")
-    public ResponseEntity<Boolean> update(@PathVariable(name = "id") Long id){
+    public ResponseEntity<Boolean> delete(@PathVariable(name = "id") Long id){
         return ResponseEntity.ok(this.courseService.delete(id));
     }
 }

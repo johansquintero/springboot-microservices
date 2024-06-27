@@ -10,6 +10,8 @@ import java.util.Optional;
 
 public interface IStudentRepository {
     List<StudentResponseDto> getAll();
+
+    List<StudentResponseDto> getAllByCourseId(Long courseId);
     Optional<StudentResponseDto> getStudentById(Long id);
 
     Optional<StudentResponseDto> getStudentByEmail(String email);

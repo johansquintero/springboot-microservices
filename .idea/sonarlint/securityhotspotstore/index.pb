@@ -53,3 +53,15 @@ amicroservices-course/src/main/java/com/microservice/course/domain/services/Cour
 cmicroservices-course/src/main/java/com/microservice/course/exception/ErrorValidationExceptions.java,a\a\aab5f380fcb654af033931d13124f8d974d533e6
 ‹
 [microservices-course/src/main/java/com/microservice/course/controller/CourseController.java,b\6\b6b56f199f5b0aaddec1ba530122cec2408015dd
+…
+Umicroservices-course/src/main/java/com/microservice/course/client/IStudentClient.java,e\f\ef33013375e85d486ee01b5f143d637a71068629
+…
+Umicroservices-course/src/main/java/com/microservice/course/domain/dto/StudentDto.java,5\c\5c7bfc92f21093f6ae6d281dd79ff49dd6c4a35b
+•
+emicroservices-course/src/main/java/com/microservice/course/http/response/StudentByCourseResponse.java,1\f\1fd4d32f11fd35ca5f8519bd79e38cb0db5ad57c
+Ž
+^microservices-student/src/main/java/com/microservice/student/persistence/entities/Student.java,d\8\d87a459b840d4fb0689324d768a3ba031a15de79
+‘
+amicroservices-gateway/src/main/java/com/microservice/gateway/MicroservicesGatewayApplication.java,5\3\53e07e02c88c857c77eed52cd1c6d4cd2fe4f305
+Ž
+^microservices-config/src/main/java/com/microservice/config/MicroservicesConfigApplication.java,b\d\bdf128d7f467671dca9899c11f94db563075146e

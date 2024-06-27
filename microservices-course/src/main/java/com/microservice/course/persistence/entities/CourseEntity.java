@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter@Setter
@@ -16,5 +15,8 @@ public class CourseEntity {
 
     @Column(name = "name")
     private String name;
+
+    @Column(name = "teacher")
+    private String teacher;
 
 }

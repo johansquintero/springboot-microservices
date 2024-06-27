@@ -1,6 +1,7 @@
 package com.microservice.course.domain.services;
 
 import com.microservice.course.domain.dto.CourseDto;
+import com.microservice.course.http.response.StudentByCourseResponse;
 
 import java.util.List;
 import java.util.Optional;
@@ -12,4 +13,6 @@ public interface ICourseService {
     Optional<CourseDto> save(CourseDto course);
     Optional<CourseDto> update(CourseDto courseDto);
     boolean delete (Long id);
+
+    StudentByCourseResponse findStudenByCourseId(Long courseId);
 }
