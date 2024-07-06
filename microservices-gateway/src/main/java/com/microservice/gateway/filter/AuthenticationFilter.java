@@ -1,0 +1,39 @@
+package com.microservice.gateway.filter;
+
+import com.microservice.gateway.utils.JwtUtils;
+import org.springframework.cloud.gateway.filter.GatewayFilter;
+import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;
+import org.springframework.http.HttpHeaders;
+import org.springframework.stereotype.Component;
+
+@Component
+public class AuthenticationFilter extends AbstractGatewayFilterFactory<AbstractGatewayFilterFactory.NameConfig> {
+    private final RouteValidator routeValidator;
+
+    private final JwtUtils jwtUtils;
+    public AuthenticationFilter(){
+        super(NameConfig.class);
+        this.routeValidator = new RouteValidator();
+        this.jwtUtils = new JwtUtils();
+    }
+    @Override
+    public GatewayFilter apply(NameConfig config) {
+        return ((exchange, chain) -> {
+            if (this.routeValidator.isSecured.test(exchange.getRequest())){
+                if (!exchange.getRequest().getHeaders().containsKey(HttpHeaders.AUTHORIZATION)){
+                    throw new RuntimeException("missing authorization header");
+                }
+                String authHeader = exchange.getRequest().getHeaders().get(HttpHeaders.AUTHORIZATION).get(0);
+                if (authHeader != null && authHeader.startsWith("Bearer ")){
+                    authHeader = authHeader.substring(7);
+                }
+                try {
+                    this.jwtUtils.validateToken(authHeader);
+                }catch(Exception e){
+                    throw new RuntimeException("un authorized access to application");
+                }
+            }
+            return chain.filter(exchange);
+        });
+    }
+}

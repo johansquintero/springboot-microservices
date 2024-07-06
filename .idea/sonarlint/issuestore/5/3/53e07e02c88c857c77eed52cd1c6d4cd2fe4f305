@@ -1,0 +1,19 @@
+
+o
+java:S1128"RRemove this unused import 'com.microservice.gateway.domain.services.IUserService'.(Œİ½‰8Åùı‡2
+x
+java:S1128"[Remove this unused import 'com.microservice.gateway.persistence.entities.PermissionEntity'.(ù¨’Ö8Åùı‡2
+r
+java:S1128"URemove this unused import 'com.microservice.gateway.persistence.entities.RoleEntity'.(¯ÁØÄ8Åùı‡2
+u
+java:S1128"SRemove this unused import 'com.microservice.gateway.persistence.entities.RoleEnum'.(Ñœ­¶şÿÿÿÿ8Åùı‡2
+r
+java:S1128"URemove this unused import 'com.microservice.gateway.persistence.entities.UserEntity'.(ˆ–Û8Åùı‡2
+d
+java:S1128"GRemove this unused import 'org.springframework.boot.CommandLineRunner'.(È—ÿÅ8Åùı‡2
+e
+java:S1128"HRemove this unused import 'org.springframework.context.annotation.Bean'.(‚î‰Ş8‘Åùı‡2
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8‘Åùı‡2
+L
+java:S1128"*Remove this unused import 'java.util.Set'.(ö²„¤şÿÿÿÿ8‘Åùı‡2

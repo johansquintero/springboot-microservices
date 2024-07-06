@@ -12,11 +12,17 @@
         <module name="microservices-student" />
         <module name="microservices-config" />
         <module name="microservices-course" />
+        <module name="microservice-auth" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="microservices-auth" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="microservice-auth" options="-parameters" />
+      <module name="microservices-auth" options="-parameters" />
       <module name="microservices-config" options="-parameters" />
       <module name="microservices-course" options="-parameters" />
       <module name="microservices-eureka" options="-parameters" />

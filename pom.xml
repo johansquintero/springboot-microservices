@@ -25,6 +25,7 @@
     <module>microservices-config</module>
     <module>microservices-student</module>
     <module>microservices-course</module>
+    <module>microservice-auth</module>
   </modules>
 
   <properties>
