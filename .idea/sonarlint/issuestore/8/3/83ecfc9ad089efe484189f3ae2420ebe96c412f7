@@ -1,0 +1,15 @@
+
+ˆ	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Şï”Å8ã§ ğˆ2J$b685628a-56c2-464b-9dbe-1d053af62764
+‡	java:S112&"FDefine and throw a dedicated exception instead of using a generic one.(•Òøe8ã§ ğˆ2J$c3479bc5-2a9a-4185-b534-1a42334fc636
+	java:S112+"FDefine and throw a dedicated exception instead of using a generic one.(¼ Âİúÿÿÿÿ8œğ ğˆ2J$2804b432-7159-4e23-914d-29882e4f1091
+	java:S112."FDefine and throw a dedicated exception instead of using a generic one.(¼ Âİúÿÿÿÿ8…¤Éğˆ2J$a7ee1f81-4582-4d06-8c4f-ac417e6dd92b
+	java:S1121"FDefine and throw a dedicated exception instead of using a generic one.(¼ Âİúÿÿÿÿ8ÿÉğˆ2J$a1d53aa7-cb2b-4983-945d-f74992bd740b
+	java:S1124"FDefine and throw a dedicated exception instead of using a generic one.(¼ Âİúÿÿÿÿ8Ğ×Îğˆ2J$877b306c-851d-46ab-a804-aa52fb033d61
+Ê
+java:S1192+"Define a constant instead of duplicating this literal "You do not have the necessary permissions to perform this action" 4 times.(¼ Âİúÿÿÿÿ8“ÿÉğˆ2J$83762128-96a6-4e06-a95a-d40660c229ce
+•
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 28 to the 15 allowed.(ï‰á 8ô§ ğˆ2J$d2ac45b9-c1fc-45e8-b73d-bfda9f848140
+n
+java:S1481("+Remove this unused "claims" local variable.(åŞœ³8û§ ğˆ2J$6a3c331e-7902-4919-bf44-9abdff141ac0
+ˆ
+java:S1128"@Remove this unused import 'org.springframework.http.HttpMethod'.(Ê¨Ä¡øÿÿÿÿ8šÂÆğˆ2J$98fde5f8-a6c7-4ef2-a953-f6c1e943af20

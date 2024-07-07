@@ -4,7 +4,12 @@ import com.microservice.gateway.utils.JwtUtils;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Component;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 
 @Component
 public class AuthenticationFilter extends AbstractGatewayFilterFactory<AbstractGatewayFilterFactory.NameConfig> {
@@ -31,6 +36,20 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<AbstractG
                     this.jwtUtils.validateToken(authHeader);
                 }catch(Exception e){
                     throw new RuntimeException("un authorized access to application");
+                }
+                Map<String,Object> claims = this.jwtUtils.getClaims(authHeader);
+                List<String> authorities = Arrays.stream(toString().split(",")).toList();
+                if(exchange.getRequest().getMethod().name().contains("POST") && (!authorities.contains("CREATE"))){
+                        throw new RuntimeException("You do not have the necessary permissions to perform this action");
+                }
+                if(exchange.getRequest().getMethod().name().contains("DELETE") && (!authorities.contains("DELETE"))){
+                    throw new RuntimeException("You do not have the necessary permissions to perform this action");
+                }
+                if(exchange.getRequest().getMethod().name().contains("PATCH") && (!authorities.contains("REFACTOR"))){
+                    throw new RuntimeException("You do not have the necessary permissions to perform this action");
+                }
+                if(exchange.getRequest().getMethod().name().contains("PUT") && (!authorities.contains("UPDATE"))){
+                    throw new RuntimeException("You do not have the necessary permissions to perform this action");
                 }
             }
             return chain.filter(exchange);
