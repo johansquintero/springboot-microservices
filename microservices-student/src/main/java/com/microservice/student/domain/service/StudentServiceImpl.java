@@ -27,6 +27,26 @@ public class StudentServiceImpl implements IStudentService{
     }
 
     @Override
+    public List<StudentResponseDto> getAllByAttributes(String value) {
+        return this.studentRepository.getAllByAttributes(value);
+    }
+
+    @Override
+    public Optional<StudentResponseDto> getStudentByFirstName(String name) {
+        return this.studentRepository.getStudentByFirstName(name);
+    }
+
+    @Override
+    public Optional<StudentResponseDto> getStudentByLastName(String lastName) {
+        return this.studentRepository.getStudentByLastName(lastName);
+    }
+
+    @Override
+    public Optional<StudentResponseDto> getStudentByEmail(String email) {
+        return this.studentRepository.getStudentByEmail(email);
+    }
+
+    @Override
     public Optional<StudentResponseDto> getStudentById(Long id) {
         return this.studentRepository.getStudentById(id);
     }
@@ -42,7 +62,7 @@ public class StudentServiceImpl implements IStudentService{
 
     @Override
     public Optional<StudentResponseDto> update(StudentRequestDto student) {
-        var studentOpt = this.studentRepository.getStudentByEmail(student.getEmail());
+        var studentOpt = this.studentRepository.getStudentById(student.getId());
         if (studentOpt.isEmpty()){
             throw new ErrorValidationExceptions("El estudiante no se encuentra registrado");
         }

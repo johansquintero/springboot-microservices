@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @Service
 @AllArgsConstructor
-public class CourseServiceImpl implements ICourseService{
+public class CourseServiceImpl implements ICourseService {
     private final ICourseRepository courseRepository;
     private final IStudentClient studentClient;
 
@@ -36,17 +36,17 @@ public class CourseServiceImpl implements ICourseService{
     @Override
     public Optional<CourseDto> save(CourseDto course) {
         Optional<CourseDto> courseOpt = this.courseRepository.getCourseByName(course.getName());
-        if (courseOpt.isPresent()){
-            throw  new ErrorValidationExceptions("El curso ya se encuetra registrado");
+        if (courseOpt.isPresent()) {
+            throw new ErrorValidationExceptions("El curso ya se encuetra registrado");
         }
         return this.courseRepository.save(course);
     }
 
     @Override
     public Optional<CourseDto> update(CourseDto course) {
-        Optional<CourseDto> courseOpt = this.courseRepository.getCourseByName(course.getName());
-        if (courseOpt.isEmpty()){
-            throw  new ErrorValidationExceptions("El curso no se encuetra registrado");
+        Optional<CourseDto> courseOpt = this.courseRepository.getCourseById(course.getId());
+        if (courseOpt.isEmpty()) {
+            throw new ErrorValidationExceptions("El curso no se encuetra registrado");
         }
         return this.courseRepository.save(course);
     }
@@ -54,7 +54,7 @@ public class CourseServiceImpl implements ICourseService{
     @Override
     public boolean delete(Long id) {
         Optional<CourseDto> courseOpt = this.courseRepository.getCourseById(id);
-        if (courseOpt.isEmpty()){
+        if (courseOpt.isEmpty()) {
             return false;
         }
         this.courseRepository.delete(id);
@@ -64,12 +64,13 @@ public class CourseServiceImpl implements ICourseService{
     @Override
     public StudentByCourseResponse findStudenByCourseId(Long courseId) {
         Optional<CourseDto> courseOpt = this.courseRepository.getCourseById(courseId);
-        if (courseOpt.isEmpty()){
-            throw  new ErrorValidationExceptions("El curso no se encuetra registrado");
+        if (courseOpt.isEmpty()) {
+            throw new ErrorValidationExceptions("El curso no se encuetra registrado");
         }
         List<StudentDto> studentDtoList = studentClient.findAllStudentsByCourseId(courseOpt.get().getId());
         return StudentByCourseResponse.builder()
                 .courseName(courseOpt.get().getName())
+                .teacher(courseOpt.get().getTeacher())
                 .studentDtoList(studentDtoList)
                 .build();
     }

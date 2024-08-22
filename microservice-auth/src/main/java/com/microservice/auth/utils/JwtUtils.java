@@ -33,6 +33,7 @@ public class JwtUtils {
         String authorities = authentication.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority).collect(Collectors.joining(","));
         Map<String, Object> claims = new HashMap<>();
+        claims.put("username",username);
         claims.put("authorities",authorities);
         return createToken(claims, username);
     }

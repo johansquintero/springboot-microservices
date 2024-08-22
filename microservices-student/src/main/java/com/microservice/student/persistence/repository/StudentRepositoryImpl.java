@@ -38,8 +38,43 @@ public class StudentRepositoryImpl implements IStudentRepository{
     }
 
     @Override
+    public List<StudentResponseDto> getAllByAttributes(String value) {
+        ModelMapper modelMapper = new ModelMapper();
+        return this.repository
+                .getAllByAttributes(value)
+                .stream()
+                .map(
+                        student -> modelMapper.map(student,StudentResponseDto.class)
+                )
+                .collect(Collectors.toList());
+    }
+
+    @Override
     public Optional<StudentResponseDto> getStudentById(Long id) {
         Optional<Student> studentOpt = this.repository.findStudentById(id);
+        if (studentOpt.isEmpty()){
+            return Optional.empty();
+        }
+        ModelMapper modelMapper= new ModelMapper();
+        return studentOpt.map(student -> modelMapper.map(student, StudentResponseDto.class));
+    }
+
+    @Override
+    public Optional<StudentResponseDto> getStudentByFirstName(String name) {
+        Optional<Student> studentOpt = this.repository.findStudentByFirstName(name);
+        if (studentOpt.isEmpty()){
+            return Optional.empty();
+        }
+        ModelMapper modelMapper= new ModelMapper();
+        return studentOpt.map(student -> modelMapper.map(student, StudentResponseDto.class));
+    }
+
+    @Override
+    public Optional<StudentResponseDto> getStudentByLastName(String lastName) {
+        Optional<Student> studentOpt = this.repository.findStudentByLastName(lastName);
+        if (studentOpt.isEmpty()){
+            return Optional.empty();
+        }
         ModelMapper modelMapper= new ModelMapper();
         return studentOpt.map(student -> modelMapper.map(student, StudentResponseDto.class));
     }
@@ -47,6 +82,9 @@ public class StudentRepositoryImpl implements IStudentRepository{
     @Override
     public Optional<StudentResponseDto> getStudentByEmail(String email) {
         Optional<Student> studentOpt = this.repository.findStudentByEmail(email);
+        if (studentOpt.isEmpty()){
+            return Optional.empty();
+        }
         ModelMapper modelMapper= new ModelMapper();
         return studentOpt.map(student -> modelMapper.map(student, StudentResponseDto.class));
     }

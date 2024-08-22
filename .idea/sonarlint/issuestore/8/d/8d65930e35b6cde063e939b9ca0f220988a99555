@@ -1,3 +1,13 @@
 
-ˆ	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Şï”Å8è»Ìˆ2J$78b88d09-8bcb-4002-b8d8-a1dee958e319
-‡	java:S112!"FDefine and throw a dedicated exception instead of using a generic one.(•Òøe8é»Ìˆ2J$e5ac891d-c1b4-43d8-9139-2a403050aa83
+ˆ	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Şï”Å8‘ª•2J$21548edf-17df-4ba5-9727-7cbd4a821b3f
+‡	java:S112&"FDefine and throw a dedicated exception instead of using a generic one.(•Òøe8’ª•2J$63b66ebc-bec4-4988-b165-6c995fc18ded
+	java:S112,"FDefine and throw a dedicated exception instead of using a generic one.(¼ Âİúÿÿÿÿ8’ª•2J$c380bc9b-8b59-41ec-b5f5-6ae2db1baefc
+	java:S112/"FDefine and throw a dedicated exception instead of using a generic one.(¼ Âİúÿÿÿÿ8’ª•2J$5237935b-85bc-408c-8c54-f6c8c17f2245
+	java:S1122"FDefine and throw a dedicated exception instead of using a generic one.(¼ Âİúÿÿÿÿ8’ª•2J$a4c849d5-1b44-4d96-9f58-40f13e77887a
+	java:S1125"FDefine and throw a dedicated exception instead of using a generic one.(¼ Âİúÿÿÿÿ8’ª•2J$8e08fd07-cd4a-4df1-aabb-847bfd8bf97d
+Ê
+java:S1192,"Define a constant instead of duplicating this literal "You do not have the necessary permissions to perform this action" 4 times.(¼ Âİúÿÿÿÿ8•ª•2J$c7b4f3be-5041-4ebc-bdde-459a84da4fff
+•
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 28 to the 15 allowed.(ï‰á 8§ª•2J$2b483e35-eaaf-4db3-ad74-2e2ed87f4ca9
+ˆ
+java:S1128"@Remove this unused import 'org.springframework.http.HttpMethod'.(Ê¨Ä¡øÿÿÿÿ8ºª•2J$4b6c07c4-92c9-44e6-89ae-f0da503a1ebc

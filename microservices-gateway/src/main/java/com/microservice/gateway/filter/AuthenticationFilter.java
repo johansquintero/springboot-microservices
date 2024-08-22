@@ -38,7 +38,8 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<AbstractG
                     throw new RuntimeException("un authorized access to application");
                 }
                 Map<String,Object> claims = this.jwtUtils.getClaims(authHeader);
-                List<String> authorities = Arrays.stream(toString().split(",")).toList();
+                String s = (String) claims.get("authorities");
+                List<String> authorities = Arrays.stream(s.split(",")).toList();
                 if(exchange.getRequest().getMethod().name().contains("POST") && (!authorities.contains("CREATE"))){
                         throw new RuntimeException("You do not have the necessary permissions to perform this action");
                 }

@@ -27,6 +27,27 @@ public class StudentController {
         return ResponseEntity.ok(this.studentService.getAllByCourseId(courseId));
     }
 
+    @GetMapping(path = "/search-by-attributes/{value}")
+    public ResponseEntity<List<StudentResponseDto>> getAllByAttributes(@PathVariable(name = "value") String value){
+        return ResponseEntity.ok(this.studentService.getAllByAttributes(value));
+    }
+
+    @GetMapping(path = "/search-by-first-name/{firstName}")
+    public ResponseEntity<StudentResponseDto> getByFirstName(@PathVariable(name = "firstName") String name){
+        return ResponseEntity.of(this.studentService.getStudentByFirstName(name));
+    }
+
+    @GetMapping(path = "/search-by-last-name/{lastName}")
+    public ResponseEntity<StudentResponseDto> getByLastName(@PathVariable(name = "lastName") String lastName){
+        return ResponseEntity.of(this.studentService.getStudentByLastName(lastName));
+    }
+
+    @GetMapping(path = "/search-by-email/{email}")
+    public ResponseEntity<StudentResponseDto> getByEmail(@PathVariable(name = "email") String email){
+        return ResponseEntity.of(this.studentService.getStudentByEmail(email));
+    }
+
+
     @GetMapping(path = "/search-by-id/{id}")
     public ResponseEntity<StudentResponseDto> getById(@PathVariable(name = "id") Long id){
         return ResponseEntity.of(this.studentService.getStudentById(id));

@@ -12,7 +12,15 @@ public interface IStudentRepository {
     List<StudentResponseDto> getAll();
 
     List<StudentResponseDto> getAllByCourseId(Long courseId);
+
+    List<StudentResponseDto> getAllByAttributes(String value);
+
     Optional<StudentResponseDto> getStudentById(Long id);
+
+    Optional<StudentResponseDto> getStudentByFirstName(String name);
+
+    Optional<StudentResponseDto> getStudentByLastName(String lastName);
+
 
     Optional<StudentResponseDto> getStudentByEmail(String email);
 

@@ -45,7 +45,7 @@ public class CourseController {
     }
     @PutMapping
     public ResponseEntity<CourseDto> update(@RequestBody CourseDto course){
-        return new ResponseEntity<>(this.courseService.update(course).get(), HttpStatus.CREATED);
+        return new ResponseEntity<>(this.courseService.update(course).get(), HttpStatus.OK);
     }
 
     @DeleteMapping(path = "/{id}")

@@ -1,19 +1,15 @@
 
-o
-java:S1128"RRemove this unused import 'com.microservice.gateway.domain.services.IUserService'.(Œİ½‰8Åùı‡2
-x
-java:S1128"[Remove this unused import 'com.microservice.gateway.persistence.entities.PermissionEntity'.(ù¨’Ö8Åùı‡2
-r
-java:S1128"URemove this unused import 'com.microservice.gateway.persistence.entities.RoleEntity'.(¯ÁØÄ8Åùı‡2
+‹
+java:S1128"HRemove this unused import 'org.springframework.context.annotation.Bean'.(‚î‰Ş8ÎÉãî’2J$4c5c3ea6-61a2-46cf-ae0a-204d98a1087f
+
+java:S1128"KRemove this unused import 'org.springframework.web.cors.CorsConfiguration'.(î¤·`8ÏÉãî’2J$14977ca3-3205-4d71-9ca2-acd8e34d49d3
+™
+java:S1128"QRemove this unused import 'org.springframework.web.cors.CorsConfigurationSource'.(ŒºÏøşÿÿÿÿ8ĞÉãî’2J$0e23bdae-4349-4bb2-adfa-aa4e96e1a91f
+¡
+java:S1128	"YRemove this unused import 'org.springframework.web.cors.UrlBasedCorsConfigurationSource'.(µ²İûùÿÿÿÿ8ĞÉãî’2J$c363662b-7da3-4563-8cc8-c864a7bbdee7
 u
-java:S1128"SRemove this unused import 'com.microservice.gateway.persistence.entities.RoleEnum'.(Ñœ­¶şÿÿÿÿ8Åùı‡2
+java:S1128"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8ĞÉãî’2J$d6f44404-4df3-49c5-a04d-0bdd1d540a5f
+s
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ƒ¢âî’2J$94040925-9d84-4624-b571-c774c4bc2e10
 r
-java:S1128"URemove this unused import 'com.microservice.gateway.persistence.entities.UserEntity'.(ˆ–Û8Åùı‡2
-d
-java:S1128"GRemove this unused import 'org.springframework.boot.CommandLineRunner'.(È—ÿÅ8Åùı‡2
-e
-java:S1128"HRemove this unused import 'org.springframework.context.annotation.Bean'.(‚î‰Ş8‘Åùı‡2
-M
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8‘Åùı‡2
-L
-java:S1128"*Remove this unused import 'java.util.Set'.(ö²„¤şÿÿÿÿ8‘Åùı‡2
+java:S1128"*Remove this unused import 'java.util.Set'.(ö²„¤şÿÿÿÿ8„¢âî’2J$545efccb-8791-4a59-b0d1-5c9e017eea69

@@ -8,5 +8,6 @@ import java.util.List;
 @Getter@Setter@AllArgsConstructor@Builder@NoArgsConstructor
 public class StudentByCourseResponse {
     private String courseName;
+    private String teacher;
     private List<StudentDto> studentDtoList;
 }
