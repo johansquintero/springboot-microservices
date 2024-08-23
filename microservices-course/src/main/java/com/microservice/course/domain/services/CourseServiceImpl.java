@@ -2,7 +2,7 @@ package com.microservice.course.domain.services;
 
 import com.microservice.course.client.IStudentClient;
 import com.microservice.course.domain.dto.CourseDto;
-import com.microservice.course.domain.dto.StudentDto;
+import com.microservice.course.domain.dto.StudentResponseDto;
 import com.microservice.course.exception.ErrorValidationExceptions;
 import com.microservice.course.http.response.StudentByCourseResponse;
 import com.microservice.course.persistence.repository.ICourseRepository;
@@ -67,11 +67,11 @@ public class CourseServiceImpl implements ICourseService {
         if (courseOpt.isEmpty()) {
             throw new ErrorValidationExceptions("El curso no se encuetra registrado");
         }
-        List<StudentDto> studentDtoList = studentClient.findAllStudentsByCourseId(courseOpt.get().getId());
+        List<StudentResponseDto> studentResponseDtoList = studentClient.findAllStudentsByCourseId(courseOpt.get().getId());
         return StudentByCourseResponse.builder()
-                .courseName(courseOpt.get().getName())
+                .name(courseOpt.get().getName())
                 .teacher(courseOpt.get().getTeacher())
-                .studentDtoList(studentDtoList)
+                .students(studentResponseDtoList)
                 .build();
     }
 

@@ -1,11 +1,3 @@
 
-‰
-java:S1192+"HDefine a constant instead of duplicating this literal "/api/**" 4 times.(Õ…øÃüÿÿÿÿJ$3dbae0e4-e7b2-41c2-9139-d42b38c0fd87
-g
-java:S1128"KRemove this unused import 'org.springframework.web.cors.CorsConfiguration'.(î¤·`8¨Êöî’2
-s
-java:S1128"QRemove this unused import 'org.springframework.web.cors.CorsConfigurationSource'.(ŒºÏøşÿÿÿÿ8¨Êöî’2
-{
-java:S1128"YRemove this unused import 'org.springframework.web.cors.UrlBasedCorsConfigurationSource'.(µ²İûùÿÿÿÿ8©Êöî’2
-O
-java:S1128"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8©Êöî’2
+
+java:S1192'"HDefine a constant instead of duplicating this literal "/api/**" 4 times.(Õ…øÃüÿÿÿÿ8€±¶Ş—2J$fc4e06ec-334f-413d-a1b7-c315300aab07

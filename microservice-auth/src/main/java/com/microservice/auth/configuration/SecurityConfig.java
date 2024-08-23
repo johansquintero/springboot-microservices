@@ -18,11 +18,6 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsConfigurationSource;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-
-import java.util.Arrays;
 
 
 @Configuration
@@ -33,18 +28,19 @@ import java.util.Arrays;
 public class SecurityConfig {
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception{
+    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity.csrf(AbstractHttpConfigurer::disable)
                 .httpBasic(Customizer.withDefaults())
-                .sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .authorizeHttpRequests(authorization->
-                    authorization
-                            .requestMatchers(HttpMethod.POST,"/api/auth/**").permitAll()
-                            .requestMatchers(HttpMethod.GET,"/api/**").hasAuthority("READ")
-                            .requestMatchers(HttpMethod.POST,"/api/**").hasAuthority("CREATE")
-                            .requestMatchers(HttpMethod.DELETE,"/api/**").hasAuthority("DELETE")
-                            .requestMatchers(HttpMethod.PUT,"/api/**").hasAuthority("UPDATE")
-                            .anyRequest().authenticated()
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .authorizeHttpRequests(authorization ->
+                        authorization
+                                .requestMatchers(HttpMethod.POST, "/api/auth/**").permitAll()
+                                .requestMatchers(HttpMethod.GET, "/api/student/search-by-course/**").permitAll()
+                                .requestMatchers(HttpMethod.GET, "/api/**").hasAuthority("READ")
+                                .requestMatchers(HttpMethod.POST, "/api/**").hasAuthority("CREATE")
+                                .requestMatchers(HttpMethod.DELETE, "/api/**").hasAuthority("DELETE")
+                                .requestMatchers(HttpMethod.PUT, "/api/**").hasAuthority("UPDATE")
+                                .anyRequest().authenticated()
                 ).build();
     }
 
@@ -54,11 +50,12 @@ public class SecurityConfig {
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder(){
+    public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
     @Bean
-    public AuthenticationProvider authenticationProvider(UserDetailsServiceImpl userDetailsService){
+    public AuthenticationProvider authenticationProvider(UserDetailsServiceImpl userDetailsService) {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
         provider.setUserDetailsService(userDetailsService);
         provider.setPasswordEncoder(passwordEncoder());

@@ -55,8 +55,6 @@ cmicroservices-course/src/main/java/com/microservice/course/exception/ErrorValid
 [microservices-course/src/main/java/com/microservice/course/controller/CourseController.java,b\6\b6b56f199f5b0aaddec1ba530122cec2408015dd
 Ö
 Umicroservices-course/src/main/java/com/microservice/course/client/IStudentClient.java,e\f\ef33013375e85d486ee01b5f143d637a71068629
-Ö
-Umicroservices-course/src/main/java/com/microservice/course/domain/dto/StudentDto.java,5\c\5c7bfc92f21093f6ae6d281dd79ff49dd6c4a35b
 ï
 emicroservices-course/src/main/java/com/microservice/course/http/response/StudentByCourseResponse.java,1\f\1fd4d32f11fd35ca5f8519bd79e38cb0db5ad57c
 é
@@ -127,5 +125,5 @@ Zmicroservice-auth/src/main/java/com/microservice/auth/domain/services/UserServi
 Tmicroservice-auth/src/main/java/com/microservice/auth/controller/AuthController.java,5\4\548532b3fce1098c2ab01f2e24a8fb04f0ab4373
 á
 Wmicroservice-auth/src/main/java/com/microservice/auth/configuration/SecurityConfig.java,c\9\c95c67813bebe9c24330d3b1edb1183a4408202b
-É
-Smicroservices-gateway/src/main/java/com/microservice/gateway/config/CorsConfig.java,9\9\9911aa3c37bde485a3cfa24e6e4d85dace601b71
+ç
+]microservices-course/src/main/java/com/microservice/course/domain/dto/StudentResponseDto.java,c\d\cd4af448f9a65d02131027fbf92cb32ef334d0b1

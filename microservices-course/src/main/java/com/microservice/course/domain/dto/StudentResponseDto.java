@@ -6,7 +6,7 @@ import lombok.*;
 @Setter
 @AllArgsConstructor@NoArgsConstructor
 @Builder
-public class StudentDto{
+public class StudentResponseDto {
         Long id;
         String firstName;
         String lastName;
