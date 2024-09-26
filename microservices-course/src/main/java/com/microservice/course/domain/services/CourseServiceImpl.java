@@ -29,8 +29,8 @@ public class CourseServiceImpl implements ICourseService {
     }
 
     @Override
-    public Optional<CourseDto> getByName(String name) {
-        return this.courseRepository.getCourseByName(name);
+    public List<CourseDto> getCoursesByValue(String value) {
+        return this.courseRepository.getCoursesByValue(value);
     }
 
     @Override

@@ -9,6 +9,8 @@ public interface ICourseRepository {
     List<CourseDto> getAll();
     Optional<CourseDto> getCourseById(Long id);
     Optional<CourseDto> getCourseByName(String name);
+
+    List<CourseDto> getCoursesByValue(String value);
     Optional<CourseDto> save(CourseDto course);
     void delete(Long id);
 }

@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 
 @Repository
 @AllArgsConstructor
-public class CourseRepositoryImpl implements ICourseRepository{
+public class CourseRepositoryImpl implements ICourseRepository {
     private final ICourseCrudRepository courseCrudRepository;
 
     @Override
@@ -24,7 +24,7 @@ public class CourseRepositoryImpl implements ICourseRepository{
                 .stream()
                 .map(
                         courseEntity -> modelMapper
-                                .map(courseEntity,CourseDto.class))
+                                .map(courseEntity, CourseDto.class))
                 .collect(Collectors.toList()
                 );
     }
@@ -34,23 +34,29 @@ public class CourseRepositoryImpl implements ICourseRepository{
         ModelMapper modelMapper = new ModelMapper();
         return this.courseCrudRepository
                 .findCourseById(id)
-                .map(courseEntity -> modelMapper.map(courseEntity,CourseDto.class));
+                .map(courseEntity -> modelMapper.map(courseEntity, CourseDto.class));
     }
 
     @Override
     public Optional<CourseDto> getCourseByName(String name) {
         ModelMapper modelMapper = new ModelMapper();
+        return this.courseCrudRepository.findCourseByName(name)
+                .map(courseEntity -> modelMapper.map(courseEntity, CourseDto.class));
+    }
+
+    @Override
+    public List<CourseDto> getCoursesByValue(String value) {
+        ModelMapper modelMapper = new ModelMapper();
         return this.courseCrudRepository
-                .findCourseByName(name)
-                .map(courseEntity -> modelMapper
-                        .map(courseEntity,CourseDto.class));
+                .findCoursesByValues(value).stream()
+                .map(courseEntity -> modelMapper.map(courseEntity, CourseDto.class)).toList();
     }
 
     @Override
     public Optional<CourseDto> save(CourseDto course) {
         ModelMapper modelMapper = new ModelMapper();
-        CourseEntity courseEntity = modelMapper.map(course,CourseEntity.class);
-        return Optional.of(modelMapper.map(this.courseCrudRepository.save(courseEntity),CourseDto.class));
+        CourseEntity courseEntity = modelMapper.map(course, CourseEntity.class);
+        return Optional.of(modelMapper.map(this.courseCrudRepository.save(courseEntity), CourseDto.class));
     }
 
     @Override
