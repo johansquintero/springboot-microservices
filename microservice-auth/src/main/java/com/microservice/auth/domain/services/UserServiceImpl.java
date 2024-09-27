@@ -103,7 +103,7 @@ public class UserServiceImpl implements IUserService{
 
     @Override
     public AuthResponseDto signUp(AuthRequestSignUpDto authRequestSignUpDto) {
-        Optional<UserEntity> userOpt = this.findByUsername(authRequestSignUpDto.username());
+        Optional<UserEntity> userOpt = this.userRepository.findByUsername(authRequestSignUpDto.username());
         List<String> roleList = authRequestSignUpDto.authRolesRequestDto().rolesListName();
         Set<RoleEntity> roleEntitySet = new HashSet<>(this.roleRepository.findAllByEnum(roleList));
 

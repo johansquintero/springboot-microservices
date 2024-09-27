@@ -30,8 +30,24 @@ services:
     volumes:
       - courses_db_volume:/var/lib/mysql
 
+  auth-db:
+    image: 'postgres'
+    container_name: auth_db_container
+    environment:
+      - 'POSTGRES_PASSWORD=12345'
+      - 'POSTGRES_DB=auth_db'
+      - 'POSTGRES_USER=user'
+    ports:
+      - "5432:5432"
+    networks:
+      - microservices_databases_network
+    volumes:
+      - auth_db_postgres_volume:/var/lib/postgresql/data
+
+
 networks:
   microservices_databases_network:
 volumes:
   students_db_volume:
   courses_db_volume:
+  auth_db_postgres_volume:

@@ -1,19 +1,17 @@
-
 server:
   port: 9999
 spring:
   application:
     name: msvc-auth
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/security
-    username: root
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/auth_db
+    username: user
     password: 12345
   jpa:
     hibernate:
       ddl-auto: create
-    database: mysql
-    database-platform: org.hibernate.dialect.MySQL8Dialect
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
 
 eureka:
   instance:
@@ -21,5 +19,3 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
-  config:
-    import: optional:configserver:http://localhost:8888
